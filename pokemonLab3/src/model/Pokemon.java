@@ -53,4 +53,10 @@ public class Pokemon {
 		return posInicial;
 	}
 	
+	public int changePosX() {
+		
+		int poosx = posY --;
+		return poosx;
+	}
+	
 }

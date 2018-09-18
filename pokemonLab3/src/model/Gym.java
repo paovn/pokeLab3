@@ -3,31 +3,35 @@ package model;
 public class Gym {
 	private Pokemon pokemon;
 
-	private String[] pokemons = {"/" +1+".png","/" +2+".png","/" +3+".png","/" +4+".png","/" +5+".png","/" +6+".png"}; 
+	private String[] pokemons = {"/" +1+".gif","/" +2+".gif","/" +3+".gif","/" +4+".gif","/" +5+".gif","/" +6+".gif","/" +7+".gif","/" +8+".gif" }; 
 	
+	public final static int POSBANNER = 119;
+	
+	public final static int POSPOKEBALL = 469;
 	public Gym() {
 		this.pokemon = new Pokemon(540, 300);
 	}
 	
-	public Pokemon darPokemon() {		
+	public Pokemon getPokemon() {		
 		return this.pokemon;
 	}
 	
-	public void guardarArchivo(String nombrePokemon, String distancia) {
+	public void saveFile(String nombrePokemon, String distancia) {
 		
 		//TO DO
 		
 	}
 	public int generatePokemon() {
 		
-		int retorno = (int)(Math.random())*(pokemons.length+1);
+		int retorno = (int)(Math.random()*(pokemons.length+1));
 		
 		return retorno;
 	}
 	public String doString() {
 		String retorno = "";
-		retorno = "/"+generatePokemon() +".png";
+		retorno = pokemons[generatePokemon()];
 		return retorno;
 	}
+	
 	
 }

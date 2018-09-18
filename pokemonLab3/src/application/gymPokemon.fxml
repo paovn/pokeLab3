@@ -1,15 +1,109 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="735.0" prefWidth="703.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ControllerGymPokemon">
    <top>
-      <Pane prefHeight="93.0" prefWidth="600.0" BorderPane.alignment="CENTER" />
+      <Pane prefHeight="175.0" prefWidth="703.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="180.0" fitWidth="711.0" layoutX="-5.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../datos/pokemon%20durmiendo.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="151.0" fitWidth="397.0" layoutX="44.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../datos/title%20pokemon.png" />
+               </image>
+            </ImageView>
+         </children></Pane>
    </top>
    <center>
-      <Canvas height="411.0" width="709.0" BorderPane.alignment="CENTER" />
+      <Pane prefHeight="421.0" prefWidth="703.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="401.0" fitWidth="709.0" layoutX="-3.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../datos/scene.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="banner" fitHeight="114.0" fitWidth="66.0" layoutX="119.0" layoutY="181.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../datos/bandera.png" />
+               </image>
+            </ImageView>
+            <ImageView id="pokeball" fx:id="pokeball" fitHeight="98.0" fitWidth="163.0" layoutX="469.0" layoutY="176.0" onMouseClicked="#pokeRandom" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../datos/pokebola.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
    </center>
+   <bottom>
+      <Pane prefHeight="160.0" prefWidth="704.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="165.0" fitWidth="711.0" layoutX="-4.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../datos/fondo%20azul.png" />
+               </image>
+            </ImageView>
+            <RadioButton layoutX="53.0" layoutY="63.0" mnemonicParsing="false" text="Pikachu">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </RadioButton>
+            <Label layoutX="28.0" layoutY="26.0" prefHeight="21.0" prefWidth="292.0" text="Escoge tu pokemon:" textFill="#070707">
+               <font>
+                  <Font name="Lucida Sans Demibold" size="18.0" />
+               </font>
+            </Label>
+            <RadioButton layoutX="53.0" layoutY="99.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="103.0" text="Cindaquil">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </RadioButton>
+            <RadioButton layoutX="360.0" layoutY="99.0" mnemonicParsing="false" text="Pidget">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </RadioButton>
+            <RadioButton layoutX="263.0" layoutY="99.0" mnemonicParsing="false" text="Articuno">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </RadioButton>
+            <RadioButton layoutX="263.0" layoutY="63.0" mnemonicParsing="false" text="Espeon">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </RadioButton>
+            <RadioButton layoutX="165.0" layoutY="99.0" mnemonicParsing="false" text="Talonflame">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </RadioButton>
+            <RadioButton layoutX="165.0" layoutY="63.0" mnemonicParsing="false" text="Darkrai">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </RadioButton>
+            <RadioButton layoutX="360.0" layoutY="63.0" mnemonicParsing="false" text="Muk">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </RadioButton>
+            <ImageView fitHeight="124.0" fitWidth="178.0" layoutX="492.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../datos/2.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+   </bottom>
 </BorderPane>
