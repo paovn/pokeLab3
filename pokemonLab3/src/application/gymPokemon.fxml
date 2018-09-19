@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
@@ -53,56 +55,60 @@
                   <Image url="@../../datos/fondo%20azul.png" />
                </image>
             </ImageView>
-            <RadioButton layoutX="53.0" layoutY="63.0" mnemonicParsing="false" text="Pikachu">
+            <RadioButton id="p1" fx:id="p1" layoutX="53.0" layoutY="63.0" mnemonicParsing="false" text="Pikachu">
                <font>
                   <Font size="14.0" />
                </font>
+               <toggleGroup>
+                  <ToggleGroup fx:id="pokes" />
+               </toggleGroup>
             </RadioButton>
             <Label layoutX="28.0" layoutY="26.0" prefHeight="21.0" prefWidth="292.0" text="Escoge tu pokemon:" textFill="#070707">
                <font>
                   <Font name="Lucida Sans Demibold" size="18.0" />
                </font>
             </Label>
-            <RadioButton layoutX="53.0" layoutY="99.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="103.0" text="Cindaquil">
+            <RadioButton id="p2" fx:id="p2" layoutX="53.0" layoutY="99.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="103.0" text="Cindaquil" toggleGroup="$pokes">
                <font>
                   <Font size="14.0" />
                </font>
             </RadioButton>
-            <RadioButton layoutX="360.0" layoutY="99.0" mnemonicParsing="false" text="Pidget">
+            <RadioButton id="p3" fx:id="p3" layoutX="360.0" layoutY="99.0" mnemonicParsing="false" text="Pidget" toggleGroup="$pokes">
                <font>
                   <Font size="14.0" />
                </font>
             </RadioButton>
-            <RadioButton layoutX="263.0" layoutY="99.0" mnemonicParsing="false" text="Articuno">
+            <RadioButton id="p6" fx:id="p6" layoutX="165.0" layoutY="63.0" mnemonicParsing="false" text="Articuno" toggleGroup="$pokes">
                <font>
                   <Font size="14.0" />
                </font>
             </RadioButton>
-            <RadioButton layoutX="263.0" layoutY="63.0" mnemonicParsing="false" text="Espeon">
+            <RadioButton id="p5" fx:id="p5" layoutX="263.0" layoutY="63.0" mnemonicParsing="false" text="Espeon" toggleGroup="$pokes">
                <font>
                   <Font size="14.0" />
                </font>
             </RadioButton>
-            <RadioButton layoutX="165.0" layoutY="99.0" mnemonicParsing="false" text="Talonflame">
+            <RadioButton id="p4" fx:id="p4" layoutX="165.0" layoutY="99.0" mnemonicParsing="false" text="Talonflame" toggleGroup="$pokes">
                <font>
                   <Font size="14.0" />
                </font>
             </RadioButton>
-            <RadioButton layoutX="165.0" layoutY="63.0" mnemonicParsing="false" text="Darkrai">
+            <RadioButton id="p8" fx:id="p8" layoutX="263.0" layoutY="99.0" mnemonicParsing="false" text="Darkrai" toggleGroup="$pokes">
                <font>
                   <Font size="14.0" />
                </font>
             </RadioButton>
-            <RadioButton layoutX="360.0" layoutY="63.0" mnemonicParsing="false" text="Muk">
+            <RadioButton id="p7" fx:id="p7" layoutX="360.0" layoutY="63.0" mnemonicParsing="false" text="Muk" toggleGroup="$pokes">
                <font>
                   <Font size="14.0" />
                </font>
             </RadioButton>
-            <ImageView fitHeight="124.0" fitWidth="178.0" layoutX="492.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="poke" fitHeight="124.0" fitWidth="178.0" layoutX="492.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../datos/2.png" />
                </image>
             </ImageView>
+            <Button layoutX="178.0" layoutY="130.0" mnemonicParsing="false" onAction="#selected" text="Seleccionar" />
          </children>
       </Pane>
    </bottom>

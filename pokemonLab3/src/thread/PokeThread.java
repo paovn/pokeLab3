@@ -24,7 +24,8 @@ public class PokeThread extends Thread {
 		
 		while(end) {
 			if(gym.getPokemon().getPosX() > gym.POSBANNER) {
-				control.move(10);
+				gym.getPokemon().changePosX();
+				control.move(gym.getPokemon().getPosX());
 				
 			}else {
 				

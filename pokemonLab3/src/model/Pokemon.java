@@ -9,8 +9,8 @@ public class Pokemon {
 	private int posY;
 	private int posInicial;
 
-	public Pokemon(int posX, int posY) {
-		this.ruta = "./data/pikachu.gif";
+	public Pokemon(int posX) {
+		this.ruta = "1.gif";
 		this.detenido = false;
 		this.posX = posX;
 		this.posY = posY;
@@ -55,7 +55,7 @@ public class Pokemon {
 	
 	public int changePosX() {
 		
-		int poosx = posY --;
+		int poosx = posX -10;
 		return poosx;
 	}
 	

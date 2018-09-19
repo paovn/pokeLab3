@@ -9,7 +9,7 @@ public class Gym {
 	
 	public final static int POSPOKEBALL = 469;
 	public Gym() {
-		this.pokemon = new Pokemon(540, 300);
+		this.pokemon = new Pokemon(POSPOKEBALL);
 	}
 	
 	public Pokemon getPokemon() {		
