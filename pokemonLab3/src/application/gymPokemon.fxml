@@ -39,7 +39,7 @@
                   <Image url="@../../datos/bandera.png" />
                </image>
             </ImageView>
-            <ImageView id="pokeball" fx:id="pokeball" fitHeight="98.0" fitWidth="163.0" layoutX="469.0" layoutY="176.0" onMouseClicked="#pokeRandom" pickOnBounds="true" preserveRatio="true">
+            <ImageView id="pokeball" fx:id="pokeball" fitHeight="98.0" fitWidth="163.0" layoutX="469.0" layoutY="176.0" onMouseClicked="#start" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../datos/pokebola.png" />
                </image>
@@ -55,7 +55,7 @@
                   <Image url="@../../datos/fondo%20azul.png" />
                </image>
             </ImageView>
-            <RadioButton id="p1" fx:id="p1" layoutX="53.0" layoutY="63.0" mnemonicParsing="false" text="Pikachu">
+            <RadioButton id="p1" fx:id="p1" layoutX="53.0" layoutY="63.0" mnemonicParsing="false" selected="true" text="Pikachu">
                <font>
                   <Font size="14.0" />
                </font>
@@ -105,7 +105,7 @@
             </RadioButton>
             <ImageView fx:id="poke" fitHeight="124.0" fitWidth="178.0" layoutX="492.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../datos/2.png" />
+                  <Image url="@../../datos/1.png" />
                </image>
             </ImageView>
             <Button layoutX="178.0" layoutY="130.0" mnemonicParsing="false" onAction="#selected" text="Seleccionar" />

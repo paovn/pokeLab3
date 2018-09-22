@@ -3,6 +3,8 @@ package controller;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import javax.swing.JOptionPane;
+
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
@@ -18,7 +20,7 @@ import thread.PokeThread;
 public class ControllerGymPokemon implements Initializable{
 	
 	private Gym gym;
-	private Node node;
+
 	private ImageView pokeball;
 
 	@Override
@@ -27,18 +29,27 @@ public class ControllerGymPokemon implements Initializable{
 		
 	}
 	@FXML
-	public void pokeRandom(MouseEvent action) {
+	public void start(MouseEvent action) {
 		
-		gym.generatePokemon();
 //		node = ((Node) action.getSource()).getParent().getParent();
 //		pokeball = (ImageView) node.lookup("pokeball");
 		pokeball = (ImageView) action.getSource();
 		
-		Image image = new Image(getClass().getResourceAsStream(gym.doString()));
-		pokeball.setImage(image);
-		gym.getPokemon().setPosX((int)pokeball.getLayoutX());
-		PokeThread thread = new PokeThread(this, gym);
-		thread.start();
+		if (gym.getPokemon().isCaught()) {
+			Image image = new Image(getClass().getResourceAsStream(gym.getPokemon().getType() + ".gif"));
+			pokeball.setImage(image);
+			gym.getPokemon().setCaught(false);
+			PokeThread thread = new PokeThread(this, gym);
+			thread.start();
+		}else {
+			String name = JOptionPane.showInputDialog("You managed to catch the pokemon. Enter your name to save it");
+			gym.saveFile(name);
+			Image image = new Image(getClass().getResourceAsStream("/pokebola.png"));
+			pokeball.setImage(image);
+			pokeball.setLayoutX(Gym.POSPOKEBALL);
+			gym.getPokemon().setPosX(Gym.POSPOKEBALL);
+			gym.getPokemon().setCaught(true);
+		}
 		
 	}
 	public void move(int i){
@@ -82,6 +93,7 @@ public class ControllerGymPokemon implements Initializable{
 			p = 8;
 		}
 		poke.setImage(new Image(getClass().getResourceAsStream("/"+p+".png")));
+		gym.getPokemon().setType(p);
 	}
 		
 	

@@ -2,35 +2,32 @@ package model;
 
 public class Pokemon {
 	
-	private String nombre;
-	private String ruta;
-	private boolean detenido;
+	private String type;
+	private boolean stopped;
+	private boolean isCaught;
 	private int posX;
-	private int posY;
-	private int posInicial;
 
 	public Pokemon(int posX) {
-		this.ruta = "1.gif";
-		this.detenido = false;
+		this.type = "/" +"1";
+		this.stopped = true;
+		this.isCaught = true;
 		this.posX = posX;
-		this.posY = posY;
-		this.posInicial = posX;
 	}
 	
-	public String getNombre() {
-		return nombre;
+	public String getType() {
+		return this.type;
 	}
 	
-	public String darRuta() {
-		return this.ruta;
+	public void setType(int type) {
+		this.type = "/" +type;
 	}
 
-	public boolean isDetenido() {
-		return detenido;
+	public boolean isStoped() {
+		return stopped;
 	}
 
-	public void setDetenido(boolean detenido) {
-		this.detenido = detenido;
+	public void setStopped(boolean stopped) {
+		this.stopped = stopped;
 	}
 	
 	public int getPosX() {
@@ -41,22 +38,17 @@ public class Pokemon {
 		this.posX = posX;
 	}
 
-	public int getPosY() {
-		return posY;
+	public void changePosX() {
+		
+		posX = posX -10;
 	}
 
-	public void setPosY(int posY) {
-		this.posY = posY;
+	public boolean isCaught() {
+		return isCaught;
 	}
-	
-	public int getPosInicial() {
-		return posInicial;
-	}
-	
-	public int changePosX() {
-		
-		int poosx = posX -10;
-		return poosx;
+
+	public void setCaught(boolean isCaught) {
+		this.isCaught = isCaught;
 	}
 	
 }

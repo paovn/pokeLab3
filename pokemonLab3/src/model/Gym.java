@@ -1,9 +1,12 @@
 package model;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+
 public class Gym {
 	private Pokemon pokemon;
-
-	private String[] pokemons = {"/" +1+".gif","/" +2+".gif","/" +3+".gif","/" +4+".gif","/" +5+".gif","/" +6+".gif","/" +7+".gif","/" +8+".gif" }; 
 	
 	public final static int POSBANNER = 119;
 	
@@ -16,21 +19,18 @@ public class Gym {
 		return this.pokemon;
 	}
 	
-	public void saveFile(String nombrePokemon, String distancia) {
+	public void saveFile(String name) {
 		
-		//TO DO
+		try {
+			BufferedWriter output = new BufferedWriter(new FileWriter(new File("saves.txt"),true));
+			output.write(name + "   Distance: " + (POSPOKEBALL-pokemon.getPosX()));
+			output.newLine();
+			output.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
-	}
-	public int generatePokemon() {
-		
-		int retorno = (int)(Math.random()*(pokemons.length+1));
-		
-		return retorno;
-	}
-	public String doString() {
-		String retorno = "";
-		retorno = pokemons[generatePokemon()];
-		return retorno;
 	}
 	
 	

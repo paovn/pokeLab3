@@ -22,7 +22,7 @@ public class PokeThread extends Thread {
 	
 	public void run() {
 		
-		while(end) {
+		while(end && !gym.getPokemon().isCaught()) {
 			if(gym.getPokemon().getPosX() > gym.POSBANNER) {
 				gym.getPokemon().changePosX();
 				control.move(gym.getPokemon().getPosX());
@@ -34,7 +34,7 @@ public class PokeThread extends Thread {
 			}
 			
 			try {
-				sleep(500);
+				sleep(700);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
